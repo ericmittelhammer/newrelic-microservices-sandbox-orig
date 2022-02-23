@@ -1,6 +1,6 @@
 resource "aws_lb_target_group" "nr_sandbox" {
   name     = "alb-target-group"
-  port     = 80
+  port     = var.target_group_http_port
   protocol = "HTTP"
   vpc_id   = aws_vpc.nr_sandbox.id
 }
