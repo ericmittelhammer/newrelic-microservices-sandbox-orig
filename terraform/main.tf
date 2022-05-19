@@ -23,3 +23,11 @@ module "kubernetes_objects" {
   customers_chart = abspath("${path.module}/../charts/customers")
   mysql_chart = abspath("${path.module}/../charts/mysql")
 }
+
+module "newrelic" {
+  source = "./newrelic"
+  new_relic_user_api_key = var.new_relic_user_api_key
+  new_relic_account_id = var.new_relic_account_id
+  new_relic_region = var.new_relic_region
+  cluster_name = var.cluster_name
+}

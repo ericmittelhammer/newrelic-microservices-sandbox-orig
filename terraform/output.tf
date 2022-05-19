@@ -13,3 +13,10 @@ output "kubeconfig" {
 output "loadbalancer_hostname" {
   value = module.kubernetes_objects.loadbalancer_hostname
 }
+
+output "superheroes_workload_permalink" {
+  value = module.newrelic.superheroes_workload.permalink
+}
+# output "applications" {
+#   value = module.newrelic.applications
+# }

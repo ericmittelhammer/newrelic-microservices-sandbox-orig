@@ -41,7 +41,9 @@ A set of Terraform modules that will deploy a fully-instrumented microservices s
     cluster directly via `kubectl`, etc.  At any time you can run `terraform output` from this directory to view those values.  Note that
     Terraform will have created a `terraform.tfstate` file.  This is how Terraform keeps track of what it has deployed.  Don't
     delete this file, otherwise Terraform will not be able to clean up when you are done!
+8. One of the outputs is a link to a workload containing all of the entities created by this configuration.  A handy shortcut to started
 8. You can visit the loadbalancer host in a browser and you should be directed to the OpenApi/Swagger documentation for the Api.
     You can also visit New Relic One to see the mircroservices working together, complete with Kubernetes Cluster Explorer,
-    Distributed Tracing, and Logs-in-context.
+    Distributed Tracing, and Logs-in-context.  One of the outputs is a link to a workload containing all of the entities created by this configuration.  A handy shortcut to started
+    exploring its observability.
 9.  Run `terraform destroy` when you are done, and all created resources will be removed.
