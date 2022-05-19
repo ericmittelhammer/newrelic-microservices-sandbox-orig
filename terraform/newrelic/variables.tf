@@ -13,3 +13,7 @@ variable "new_relic_region" {
 variable "cluster_name" {
   type = string
 }
+
+variable "owner" {
+    type = string
+}

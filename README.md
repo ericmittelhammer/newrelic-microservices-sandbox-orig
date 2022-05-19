@@ -43,7 +43,9 @@ A set of Terraform modules that will deploy a fully-instrumented microservices s
     delete this file, otherwise Terraform will not be able to clean up when you are done!
 8. One of the outputs is a link to a workload containing all of the entities created by this configuration.  A handy shortcut to started
 8. You can visit the loadbalancer host in a browser and you should be directed to the OpenApi/Swagger documentation for the Api.
-    You can also visit New Relic One to see the mircroservices working together, complete with Kubernetes Cluster Explorer,
+9. Visit [New Relic One](https://one.newrelic.com) to see the mircroservices working together, complete with Kubernetes Cluster Explorer,
     Distributed Tracing, and Logs-in-context.  One of the outputs is a link to a workload containing all of the entities created by this configuration.  A handy shortcut to started
     exploring its observability.
-9.  Run `terraform destroy` when you are done, and all created resources will be removed.
+
+    Alternatively, you can use the global filter in [New Relic Explorer](https://docs.newrelic.com/docs/new-relic-solutions/new-relic-one/core-concepts/new-relic-explorer-view-performance-across-apps-services-hosts/#filter-tag) to filter for `project = <whatever your cluster name is>`
+10.  Run `terraform destroy` when you are done, and all created resources will be removed.

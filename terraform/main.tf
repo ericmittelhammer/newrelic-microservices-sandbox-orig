@@ -30,4 +30,5 @@ module "newrelic" {
   new_relic_account_id = var.new_relic_account_id
   new_relic_region = var.new_relic_region
   cluster_name = var.cluster_name
+  owner = var.owner
 }

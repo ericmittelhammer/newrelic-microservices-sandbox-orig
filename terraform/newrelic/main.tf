@@ -17,6 +17,26 @@ data "newrelic_entity" "applications" {
   domain = "APM"
 }
 
+resource "newrelic_entity_tags" "application_tags" {
+    count = "${length(local.app_names)}"
+    guid = "${element(data.newrelic_entity.applications[*].guid, count.index)}"
+
+    tag {
+        key = "automation"
+        values = ["terraform"]
+    }
+
+    tag {
+        key = "project"
+        values = ["${var.cluster_name}"]
+    }
+    
+    tag {
+        key = "owner"
+        values = ["${var.owner}"]
+    }
+}
+
 resource "newrelic_alert_policy" "application_health" {
   name = "Application Health"
 }
@@ -59,6 +79,11 @@ resource "newrelic_entity_tags" "superheroes_components_tags" {
     tag {
         key = "project"
         values = ["${var.cluster_name}"]
+    }
+    
+    tag {
+        key = "owner"
+        values = ["${var.owner}"]
     }
 }
 
