@@ -2,9 +2,9 @@ provider "aws" {
   
   default_tags {
     tags = {
-      Created_By  = "Terraform"
-      Project     = var.cluster_name
-      Owner       = var.owner
+      automation  = "terraform"
+      project     = var.cluster_name
+      owner       = var.owner
     }
   }
 }
